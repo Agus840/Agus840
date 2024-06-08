@@ -20,3 +20,10 @@ def salon():
 
 resultado = salon()
 print(resultado)
+
+def contar_alquileres(lista):
+    contador = len(lista)
+    return contador
+
+cont = contar_alquileres(resultado)
+print("La cantidad de veces alquilada son:", cont)
