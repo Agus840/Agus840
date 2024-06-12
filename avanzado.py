@@ -1,29 +1,24 @@
-def salon():
-    lista = []
-    print("Programación de agenda para un salón de fiesta, agregue la fecha o ponga 000 para finalizar")
-    fecha = input("Fecha (dd-mm-aaaa): ")    
-    while fecha != "000":
-        if fecha in [evento[0] for evento in lista]:
-            print("Error: La fecha ya está ocupada. Intente con otra fecha.")
-        else:
-            personas = int(input("Cantidad de personas: "))
-            costo = int(input("Agregue el costo del salón: "))
-            servicios = input("¿Va a haber costo de servicio? Ponga si o no: ")
-            if servicios == "si":
-                servicios = int(input("¿Cuánto es el monto del servicio?: "))
-            elif servicios == "no":
-                servicios = 0
-            datos = (fecha, personas, costo, servicios)
-            lista.append(datos)
-        fecha = input("Agregue la fecha o escriba 000 para finalizar: ")
-    return lista
-
-resultado = salon()
-print(resultado)
-
-def contar_alquileres(lista):
-    contador = len(lista)
-    return contador
-
-cont = contar_alquileres(resultado)
-print("La cantidad de veces alquilada son:", cont)
+def Datos():
+	print("bienvenido a la veterinaria, porfavor ingrese los datos solicitados o ingrese 000 para terminar")
+	completos=[]
+	incompletos=[] 
+	nombre=input("ingrese su nombre: ")
+	while nombre!="000":
+		apellido=input("ingrese su apellido: ")
+		dni=input("ingrese su DNI: ")
+		dueño=input("¿es el dueño del animal? (Si o No): ")
+		nom_ani=input("ingrese el nombre de la mascota: ")
+		edad=input("ingrese la edad de la mascota: ")
+		print("Porfavor siga ingresando los datos solicitados o ingrese 000 para terminar")
+		nombre=input("ingrese su nombre: ")
+		if (nombre==""or apellido==""or dni==""or dueño== "" or nom_ani=="" or edad== ""):
+			Dat_inc=nombre,apellido,dni,dueño,nom_ani,edad
+			incompletos.append(Dat_inc)
+		else:
+			Dat_com=nombre,apellido,dni,dueño,nom_ani,edad
+			completos.append(Dat_com)
+	return completos,incompletos
+Dat=Datos()
+print(Dat[0])
+print("-----------------------")
+print(Dat[1])
