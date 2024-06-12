@@ -33,7 +33,7 @@ print("incompletos ",listas[1])
 def edad_acendente(lista):
 	print("lista acendente de edad de los animales")
 	for elemento in lista:
-		lista.sort()
+		lista.sort(key=lambda elemento: elemento[5])
 		print("________________________________________")
 		print(" Nombre del dueño: ",elemento[0]," Dni: ",elemento[2]," nombre del animal: ",elemento[4]," edad: ",elemento[5])
 		print("________________________________________")
