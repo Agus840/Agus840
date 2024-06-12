@@ -1,4 +1,4 @@
-def Datos():
+def datos():
 	print("bienvenido a la veterinaria, ¿desea crear una lista de datos? Si para comenzar y No para finalizar")
 	lista=[]
 	inicio=input("ingrese si o no: ").upper()
@@ -24,17 +24,19 @@ def separar_datos(lista):
 		else:
 			completos.append(elemento)
 	return [completos,incompletos]
-Dat=Datos()
-listas= separar_datos(Dat)
+dat=datos()
+listas= separar_datos(dat)
+print("--------------------------")
 print("completos ",listas[0])
 print("--------------------------")
 print("incompletos ",listas[1])
+print("--------------------------")
 
 def edad_acendente(lista):
 	print("lista acendente de edad de los animales")
-	for elemento in lista:
-		lista.sort(key=lambda elemento: elemento[5])
-		print("________________________________________")
-		print(" Nombre del dueño: ",elemento[0]," Dni: ",elemento[2]," nombre del animal: ",elemento[4]," edad: ",elemento[5])
-		print("________________________________________")
-edad=edad_acendente(Dat)
+	lista.sort(key=lambda lista: lista[5])
+	print("________________________________________")
+	print(" Nombre del dueño: ",lista[0]," Dni: ",lista[2]," nombre del animal: ",lista[4]," edad: ",lista[5])
+	print("________________________________________")
+	return lista
+edad=edad_acendente(dat)
